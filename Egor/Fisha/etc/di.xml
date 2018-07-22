@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Egor\Fisha\Api\Data\FishaOrderInterface" type="Egor\Fisha\Model\FishaOrder" />
+    <preference for="Egor\Fisha\Api\Data\ShopperInterface" type="Egor\Fisha\Model\Shopper" />
+    <preference for="Egor\Fisha\Api\FishaOrderManagementInterface" type="Egor\Fisha\Model\FishaOrderManagement" />
+    <preference for="Egor\Fisha\Api\FishaOrderRepositoryInterface" type="Egor\Fisha\Model\FishaOrderRepository" />
+    <preference for="Egor\Fisha\Api\FishaProviderInterface" type="Egor\Fisha\Model\FishaProvider" />
+    <preference for="Egor\Fisha\Api\ShopperAccountManagementInterface" type="Egor\Fisha\Model\ShopperAccountManagement" />
+    <preference for="Egor\Fisha\Api\ShopperRepositoryInterface" type="Egor\Fisha\Model\ShopperRepository" />
+    <type name="Egor\Fisha\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Egor\Fisha\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">EgorLoger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Egor\Fisha\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
